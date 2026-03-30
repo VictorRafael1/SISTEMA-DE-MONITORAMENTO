@@ -9,7 +9,8 @@ import icon from 'leaflet/dist/images/marker-icon.png';
 import iconShadow from 'leaflet/dist/images/marker-shadow.png';
 
 const DefaultIcon = L.icon({ iconUrl: icon, shadowUrl: iconShadow });
-L.Marker.defaultOptions.icon = DefaultIcon;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+(L.Marker.prototype as any).options.icon = DefaultIcon;
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
